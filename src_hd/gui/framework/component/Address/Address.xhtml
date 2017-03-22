@@ -14,8 +14,9 @@
 <cc:implementation>
 	<p:outputPanel>
 		<h:panelGrid columns="2">
+		
 			<p:outputLabel for="city" value="Country" />
-			<p:inputText id="city" value="#{data.address.city}"></p:inputText>
+        	<p:autoComplete forceSelection="true" id="city" value="#{data.address.city}" completeMethod="#{logic.searchCity}" />
 
 			<p:outputLabel for="zip" value="Zip" />
 			<p:inputText id="zip" value="#{data.address.zip}"></p:inputText>

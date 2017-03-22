@@ -4,3 +4,7 @@ address gui.framework.Address #field
 address PERSISTENT #fieldModifier
 cities java.util.List<String> #field
 cities PERSISTENT #fieldModifier
+searchCities java.util.List<String> #field
+searchCities PERSISTENT #fieldModifier
+searchCityText String #field
+searchCityText PERSISTENT #fieldModifier
