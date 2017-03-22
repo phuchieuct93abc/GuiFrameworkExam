@@ -1,0 +1,4 @@
+BusinessProcessData #class
+gui.framework.businessProcess #namespace
+person gui.framework.Person #field
+person PERSISTENT #fieldModifier

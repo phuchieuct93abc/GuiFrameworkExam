@@ -1,0 +1,4 @@
+PersonData #class
+gui.framework.component.Person #namespace
+person gui.framework.Person #field
+person PERSISTENT #fieldModifier

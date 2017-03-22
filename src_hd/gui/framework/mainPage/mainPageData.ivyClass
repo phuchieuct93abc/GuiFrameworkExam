@@ -1,0 +1,4 @@
+mainPageData #class
+gui.framework.mainPage #namespace
+businessProcessData gui.framework.businessProcess.BusinessProcessData #field
+businessProcessData PERSISTENT #fieldModifier

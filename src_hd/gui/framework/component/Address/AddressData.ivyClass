@@ -1,0 +1,6 @@
+AddressData #class
+gui.framework.component.Address #namespace
+address gui.framework.Address #field
+address PERSISTENT #fieldModifier
+cities java.util.List<String> #field
+cities PERSISTENT #fieldModifier
