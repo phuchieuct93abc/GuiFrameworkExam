@@ -1,2 +1,18 @@
 Person #class
 gui.framework #namespace
+lastName String #field
+lastName PERSISTENT #fieldModifier
+firstName String #field
+firstName PERSISTENT #fieldModifier
+age Integer #field
+age PERSISTENT #fieldModifier
+protector String #field
+protector PERSISTENT #fieldModifier
+workAddress gui.framework.Address #field
+workAddress PERSISTENT #fieldModifier
+homeAddress gui.framework.Address #field
+homeAddress PERSISTENT #fieldModifier
+landlinePhone String #field
+landlinePhone PERSISTENT #fieldModifier
+mobilePhone String #field
+mobilePhone PERSISTENT #fieldModifier
