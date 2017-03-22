@@ -1,0 +1,6 @@
+Address #class
+gui.framework #namespace
+city String #field
+city PERSISTENT #fieldModifier
+zip String #field
+zip PERSISTENT #fieldModifier
