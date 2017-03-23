@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Mar 23 11:53:06 ICT 2017]
+[>Created: Thu Mar 23 15:03:32 ICT 2017]
 15AF64B0A9893AE0 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainPageProcess Big #zClass
@@ -28,7 +28,6 @@ ms0 @RichDialogProcessStart f9 '' #zField
 ms0 @RichDialogProcessEnd f10 '' #zField
 ms0 @PushWFArc f11 '' #zField
 ms0 @PushWFArc f12 '' #zField
-ms0 @RichDialogProcessStart f13 '' #zField
 ms0 @RichDialogMethodStart f14 '' #zField
 ms0 @PushWFArc f15 '' #zField
 >Proto ms0 ms0 mainPageProcess #zField
@@ -80,7 +79,9 @@ ms0 f6 actionDecl 'gui.framework.mainPage.mainPageData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
 ' #txt
-ms0 f6 actionCode 'import ch.axonivy.fintech.standard.guiframework.bean.GuiFrameworkContext;
+ms0 f6 actionCode 'import ch.axonaviy.guidemo.services.CommonUtils;
+import ch.axonivy.fintech.standard.guiframework.bean.GuiFrameworkContext;
+
 import gui.framework.Dossier;
 import gui.framework.Address;
 import gui.framework.Person;
@@ -92,6 +93,8 @@ in.dossier.accountHolder.person.firstName = "hieu";
 in.dossier.accountHolder.person.age = 18;
 in.dossier.accountHolder.person.workAddress = new Address();
 in.dossier.accountHolder.person.homeAddress = new Address();
+
+CommonUtils.onSubmitCallback(out);
 ' #txt
 ms0 f6 type gui.framework.mainPage.mainPageData #txt
 ms0 f6 168 42 112 44 0 -8 #rect
@@ -105,7 +108,7 @@ ms0 f8 actionDecl 'gui.framework.mainPage.mainPageData out;
 ms0 f8 actionTable 'out=in;
 ' #txt
 ms0 f8 actionCode 'import javax.faces.context.FacesContext;
-in.isValidated = FacesContext.getCurrentInstance().isValidationFailed();' #txt
+' #txt
 ms0 f8 type gui.framework.mainPage.mainPageData #txt
 ms0 f8 136 266 112 44 0 -8 #rect
 ms0 f8 @|StepIcon #fIcon
@@ -115,6 +118,8 @@ ms0 f9 actionDecl 'gui.framework.mainPage.mainPageData out;
 ' #txt
 ms0 f9 actionTable 'out=in;
 ' #txt
+ms0 f9 actionCode 'import ch.axonaviy.guidemo.services.CommonUtils;
+CommonUtils.onSubmitCallback(out);' #txt
 ms0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -133,27 +138,14 @@ ms0 f11 expr out #txt
 ms0 f11 93 288 136 288 #arcP
 ms0 f12 expr out #txt
 ms0 f12 248 288 323 288 #arcP
-ms0 f13 guid 15AF97FB026A054C #txt
-ms0 f13 type gui.framework.mainPage.mainPageData #txt
-ms0 f13 actionDecl 'gui.framework.mainPage.mainPageData out;
-' #txt
-ms0 f13 actionTable 'out=in;
-' #txt
-ms0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>UD_Event_Start1</name>
-    </language>
-</elementInfo>
-' #txt
-ms0 f13 83 371 26 26 -47 15 #rect
-ms0 f13 @|RichDialogProcessStartIcon #fIcon
 ms0 f14 guid 15AF97FBA12DD9F0 #txt
 ms0 f14 type gui.framework.mainPage.mainPageData #txt
-ms0 f14 method submit() #txt
+ms0 f14 method submit(Boolean) #txt
 ms0 f14 disableUIEvents false #txt
 ms0 f14 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<> param = methodEvent.getInputArguments();
+<java.lang.Boolean isValid> param = methodEvent.getInputArguments();
+' #txt
+ms0 f14 inParameterMapAction 'out.isValidated=param.isValid;
 ' #txt
 ms0 f14 outParameterDecl '<> result;
 ' #txt
@@ -161,6 +153,8 @@ ms0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>submit()</name>
+        <nameStyle>8,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt

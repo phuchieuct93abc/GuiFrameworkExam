@@ -4,6 +4,12 @@
     <method>
         <name>submit</name>
         <description></description>
+        <inputParameter>
+            <name>isValid</name>
+            <description></description>
+            <parameterType>Boolean</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </inputParameter>
     </method>
     <startMethod>
         <name>start</name>
