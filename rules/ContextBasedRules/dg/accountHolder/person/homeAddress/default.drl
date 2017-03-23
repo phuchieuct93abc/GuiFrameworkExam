@@ -1,0 +1,12 @@
+package ch.axonivy.fintech.basic.component.showcase.address
+
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto
+import ch.ivyteam.ivy.environment.Ivy;
+rule "rule 2"
+when
+      $zip : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.workAddress.zip")
+   
+then
+	$zip.setRequired(true);
+	
+end

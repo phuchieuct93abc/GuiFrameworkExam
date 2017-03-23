@@ -1,0 +1,28 @@
+package ch.axonivy.fintech.basic.component.showcase.address
+
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto
+import ch.ivyteam.ivy.environment.Ivy;
+rule "rule 1"
+when
+      $age : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.age",viewValue >= 18)
+      $workAddress : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.workAddress")
+      $protector: BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.protector")
+   
+then
+	$workAddress.setReadonly(false);
+	$protector.setRendered(false);
+	
+end
+rule "rule 2"
+when
+      $age : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.age",viewValue < 18)
+      $workAddress : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.workAddress")
+            $protector: BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.protector")
+      
+   
+then
+	$workAddress.setReadonly(true);
+		$protector.setRendered(true);
+	
+	
+end
