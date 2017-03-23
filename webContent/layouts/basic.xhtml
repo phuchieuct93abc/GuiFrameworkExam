@@ -16,6 +16,8 @@
   <h:outputStylesheet name="layouts/styles/bootstrap-modified-for-jsf.css" />
   <h:outputStylesheet name="layouts/styles/bootstrap-reset.css" />
   <h:outputStylesheet name="layouts/styles/ivy-common-6.css" />
+  <h:outputScript library="ivy-webcontent" name="/resources/util/lodash.min.js" />
+	<h:outputScript library="ivy-webcontent" name="/resources/js/fintechHandlingComponent.js?v=#{cachedVersionResolver.version}"/>
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,7 +27,7 @@
   <![endif]-->
 </h:head>
 <h:body>
-  <ui:insert name="header">
+  <ui:insert name="header">Heelo
     <div class="navbar navbar-top">
       <div class="container" id="headerdiv">
         <div class="navbar-header">
@@ -44,7 +46,7 @@
 
     <ui:insert name="footer">
       <hr />
-      <footer>
+      <footer>Hieu
         <ui:include src="/layouts/includes/footer.xhtml" />
       </footer>
     </ui:insert>

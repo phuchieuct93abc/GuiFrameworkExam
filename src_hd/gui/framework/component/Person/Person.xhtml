@@ -28,7 +28,7 @@
 			<p:inputText id="personFirstName" value="#{data.person.firstName}"></p:inputText>
 
 			<p:outputLabel for="personAge" value="Age" />
-			<p:inputText  id="personAge" value="#{data.person.age}"></p:inputText>
+			<p:inputText type="number"  id="personAge" value="#{data.person.age}"></p:inputText>
 
 			<p:outputLabel for="personProtector" value="Protector" />
 			<p:inputText id="personProtector" value="#{data.person.protector}"></p:inputText>
@@ -43,7 +43,7 @@
 				value="#{data.person.mobilePhone}"></p:inputText>
 
 		
-					<p:outputLabel value="Work address" />
+					 <p:outputLabel value="Work address" />
 				
 		
 					<ic:gui.framework.component.Address dataModel="#{data.person.workAddress}"></ic:gui.framework.component.Address>
@@ -51,7 +51,7 @@
 			<p:outputLabel value="Home address" />
 
 			<ic:gui.framework.component.Address dataModel="#{data.person.homeAddress}"></ic:gui.framework.component.Address>
-		</h:panelGrid>
+ 		</h:panelGrid>
 
 	</p:outputPanel>
 </cc:implementation>

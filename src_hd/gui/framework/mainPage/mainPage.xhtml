@@ -13,10 +13,10 @@
 		<ui:define name="content">
 			<h:form id="form">
 				<gui:eventListeners rulesPackage="dg"
-					dataModel="#{data.accountHolder}" dialogData="#{data}" />
+					dataModel="#{data.dossier}" dialogData="#{data}" />
 				<ic:gui.framework.component.AccountHolder
-					dataModel="#{data.accountHolder}"/>
-					<p:commandButton type="submit" update="form">Submit</p:commandButton>
+					dataModel="#{data.dossier.accountHolder}"/>
+					<p:commandButton type="submit" update="form" value="Submit"/>
 			</h:form>
 
 		</ui:define>

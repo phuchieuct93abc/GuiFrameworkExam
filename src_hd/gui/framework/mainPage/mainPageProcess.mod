@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Mar 23 08:58:32 ICT 2017]
+[>Created: Thu Mar 23 09:56:13 ICT 2017]
 15AF64B0A9893AE0 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainPageProcess Big #zClass
@@ -72,14 +72,16 @@ ms0 f6 actionDecl 'gui.framework.mainPage.mainPageData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
 ' #txt
-ms0 f6 actionCode 'import gui.framework.Address;
+ms0 f6 actionCode 'import gui.framework.Dossier;
+import gui.framework.Address;
 import gui.framework.Person;
 import gui.framework.AccountHolder;
-in.accountHolder = new AccountHolder();
-in.accountHolder.person = new Person();
-in.accountHolder.person.firstName = "hiue";
-in.accountHolder.person.workAddress = new Address();
-in.accountHolder.person.homeAddress = new Address();
+in.dossier = new Dossier();
+in.dossier.accountHolder = new AccountHolder();
+in.dossier.accountHolder.person = new Person();
+in.dossier.accountHolder.person.firstName = "hiue";
+in.dossier.accountHolder.person.workAddress = new Address();
+in.dossier.accountHolder.person.homeAddress = new Address();
 ' #txt
 ms0 f6 type gui.framework.mainPage.mainPageData #txt
 ms0 f6 168 42 112 44 0 -8 #rect

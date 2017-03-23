@@ -1,4 +1,4 @@
 mainPageData #class
 gui.framework.mainPage #namespace
-accountHolder gui.framework.AccountHolder #field
-accountHolder PERSISTENT #fieldModifier
+dossier gui.framework.Dossier #field
+dossier PERSISTENT #fieldModifier

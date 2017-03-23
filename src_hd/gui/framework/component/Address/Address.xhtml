@@ -20,7 +20,14 @@
 		<h:panelGrid columns="2">
 		
 			<p:outputLabel for="city" value="Country" />
-        	<p:autoComplete forceSelection="true" id="city" value="#{data.address.city}" completeMethod="#{logic.searchCity}" />
+			
+			
+			<p:selectOneMenu id="city" value="#{data.address.city}">
+	            <f:selectItem itemLabel="Select One" itemValue="" />
+	            <f:selectItems value="#{data.cities}" />
+	        </p:selectOneMenu>
+        
+        
 
 			<p:outputLabel for="zip" value="Zip" />
 			<p:inputText id="zip" value="#{data.address.zip}"></p:inputText>
