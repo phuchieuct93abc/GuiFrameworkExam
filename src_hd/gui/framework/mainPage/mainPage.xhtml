@@ -13,11 +13,17 @@
 		<ui:define name="title">mainPage</ui:define>
 		<ui:define name="content">
 			<h:form id="form">
+						    <p:remoteCommand name="submit" action="#{logic.submit}" />
+			
 				<gui:eventListeners rulesPackage="dg"
 					dataModel="#{data.dossier}" dialogData="#{data}" />
 				<ic:gui.framework.component.AccountHolder
 					dataModel="#{data.dossier.accountHolder}"/>
-			<v:validateAllButton  rulesPackage="dg" value="Validate" styleClass="validation-button" />
+<!-- 			<v:validateAllButton  rulesPackage="dg" value="Validate" styleClass="validation-button" />
+ -->			<p:commandButton   update="@form" process="@form" partialSubmit="true" ajax="true"  
+            onstart="Fintech.GuiFrameWork.setCurrentProcessingComponentIds('ContextBasedRules.dg');" onerror="alert(1)" onsuccess="alert(2)"></p:commandButton>
+			Value #{data.dossier}
+			
 			</h:form>
 
 		</ui:define>

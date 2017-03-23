@@ -7,7 +7,8 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile"
-	   xmlns:gui="http://axonivy.com/gui/components">
+	   xmlns:gui="http://axonivy.com/gui/components"
+	   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 <cc:interface componentType="IvyComponent">
 <cc:attribute name="dataModel"></cc:attribute>
@@ -40,7 +41,8 @@
 
 			<p:outputLabel  value="Mobile Phone" />
 			<p:inputText id="personMobilePhone"
-				value="#{data.person.mobilePhone}"></p:inputText> 
+				value="#{data.person.mobilePhone}"  
+				></p:inputText> 
  
 					 <p:outputLabel value="Work address" />
 				

@@ -2,3 +2,5 @@ mainPageData #class
 gui.framework.mainPage #namespace
 dossier gui.framework.Dossier #field
 dossier PERSISTENT #fieldModifier
+isValidated Boolean #field
+isValidated PERSISTENT #fieldModifier
