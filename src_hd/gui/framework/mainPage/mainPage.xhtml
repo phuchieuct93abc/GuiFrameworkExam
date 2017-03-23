@@ -6,7 +6,8 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile"
-	xmlns:gui="http://axonivy.com/gui/components">
+	xmlns:gui="http://axonivy.com/gui/components"
+	  xmlns:v="http://java.sun.com/jsf/composite/guiframework-components">
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">mainPage</ui:define>
@@ -16,7 +17,7 @@
 					dataModel="#{data.dossier}" dialogData="#{data}" />
 				<ic:gui.framework.component.AccountHolder
 					dataModel="#{data.dossier.accountHolder}"/>
-					<p:commandButton type="submit" update="form" value="Submit"/>
+			<v:validateAllButton  rulesPackage="dg" value="Validate" styleClass="validation-button" />
 			</h:form>
 
 		</ui:define>

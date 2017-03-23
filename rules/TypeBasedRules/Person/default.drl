@@ -1,0 +1,16 @@
+package ch.axonivy.fintech.basic.component.showcase.address
+
+import ch.axonivy.fintech.standard.guiframework.BaseMetaDto
+import ch.ivyteam.ivy.environment.Ivy;
+rule "rule 1.1"
+when
+      $landline : BaseMetaDto( propertyName == "TypeBasedRules.Person.landlinePhone",viewValue == "")
+      $mobile: BaseMetaDto( propertyName == "TypeBasedRules.Person.mobilePhone",viewValue == "")
+ 
+   
+then
+$landline.setMarkAsRequired(true);
+	 $landline.setRequired(true);
+	 $mobile.setRequired(true);
+	 $mobile.setMarkAsRequired(true);
+end

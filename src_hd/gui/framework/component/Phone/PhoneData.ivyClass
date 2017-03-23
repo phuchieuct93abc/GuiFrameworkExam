@@ -1,0 +1,4 @@
+PhoneData #class
+gui.framework.component.Phone #namespace
+phone gui.framework.Phone #field
+phone PERSISTENT #fieldModifier
