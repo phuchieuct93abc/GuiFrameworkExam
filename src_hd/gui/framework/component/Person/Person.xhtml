@@ -6,14 +6,18 @@
 	xmlns:ic="http://ivyteam.ch/jsf/component"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions"
-	xmlns:pm="http://primefaces.org/mobile">
+	xmlns:pm="http://primefaces.org/mobile"
+	   xmlns:gui="http://axonivy.com/gui/components">
 
 <cc:interface componentType="IvyComponent">
+<cc:attribute name="dataModel"></cc:attribute>
 </cc:interface>
 
 <cc:implementation>
 	<h2>Person</h2>
-	<p:outputPanel>
+	<p:outputPanel id="personContainer">
+	    <gui:eventListeners dataModel="#{data.person}" dialogData="#{data}" />
+	
 		<h:panelGrid columns="2">
 
 			<!-- fields needs to be inside a h:form tag (which is normaly added by the outer page) -->
@@ -24,7 +28,7 @@
 			<p:inputText id="personFirstName" value="#{data.person.firstName}"></p:inputText>
 
 			<p:outputLabel for="personAge" value="Age" />
-			<p:inputText type="number" id="personAge" value="#{data.person.age}"></p:inputText>
+			<p:inputText  id="personAge" value="#{data.person.age}"></p:inputText>
 
 			<p:outputLabel for="personProtector" value="Protector" />
 			<p:inputText id="personProtector" value="#{data.person.protector}"></p:inputText>
@@ -38,22 +42,15 @@
 			<p:inputText id="personMobilePhone"
 				value="#{data.person.mobilePhone}"></p:inputText>
 
-			<p:row>
-				<p:column colspan="2">
+		
 					<p:outputLabel value="Work address" />
-				</p:column>
-
-			</p:row>
-			<p:row>
-
-				<p:column colspan="2">
-					<ic:gui.framework.component.Address />
-				</p:column>
-
-			</p:row>
+				
+		
+					<ic:gui.framework.component.Address dataModel="#{data.person.workAddress}"></ic:gui.framework.component.Address>
+				
 			<p:outputLabel value="Home address" />
 
-			<ic:gui.framework.component.Address />
+			<ic:gui.framework.component.Address dataModel="#{data.person.homeAddress}"></ic:gui.framework.component.Address>
 		</h:panelGrid>
 
 	</p:outputPanel>

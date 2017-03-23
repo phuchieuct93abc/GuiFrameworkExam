@@ -1,6 +1,6 @@
 [Ivy]
-[>Created: Wed Mar 22 21:19:58 ICT 2017]
-15AF64E582E1AD5D 3.19 #module
+[>Created: Thu Mar 23 09:03:59 ICT 2017]
+15AF64E582E1AD5D 3.18 #module
 >Proto >Proto Collection #zClass
 As0 AddressProcess Big #zClass
 As0 RD #cInfo
@@ -79,7 +79,9 @@ As0 f6 actionDecl 'gui.framework.component.Address.AddressData out;
 ' #txt
 As0 f6 actionTable 'out=in;
 ' #txt
-As0 f6 actionCode 'import java.util.Arrays;
+As0 f6 actionCode 'import gui.framework.Address;
+import java.util.Arrays;
+
 in.cities = Arrays.asList("VietNam","Thailand","Campuchia");' #txt
 As0 f6 type gui.framework.component.Address.AddressData #txt
 As0 f6 168 42 112 44 0 -8 #rect

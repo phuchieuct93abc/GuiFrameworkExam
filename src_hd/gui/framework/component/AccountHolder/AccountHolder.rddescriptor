@@ -4,10 +4,16 @@
     <startMethod>
         <name>start</name>
         <description>Default dialog start method.</description>
+        <inputParameter>
+            <name>dataModel</name>
+            <description></description>
+            <parameterType>gui.framework.AccountHolder</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </inputParameter>
     </startMethod>
     <property>
         <name>guid</name>
-        <value>15AF64B0AD7289BC</value>
+        <value>15AF8BD4256F3496</value>
         <readOnly>true</readOnly>
     </property>
     <property>
