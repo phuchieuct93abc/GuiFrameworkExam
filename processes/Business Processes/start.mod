@@ -1,6 +1,6 @@
 [Ivy]
-[>Created: Wed Mar 22 20:54:01 ICT 2017]
-15AF64793E3E00CF 3.19 #module
+[>Created: Thu Mar 23 08:12:19 ICT 2017]
+15AF64793E3E00CF 3.18 #module
 >Proto >Proto Collection #zClass
 st0 start Big #zClass
 st0 B #cInfo
@@ -42,16 +42,17 @@ st0 f0 @|StartRequestIcon #fIcon
 st0 f1 type gui.framework.Data #txt
 st0 f1 337 49 30 30 0 15 #rect
 st0 f1 @|EndIcon #fIcon
-st0 f3 targetWindow NEW #txt
+st0 f3 targetWindow NEW:card: #txt
 st0 f3 targetDisplay TOP #txt
 st0 f3 richDialogId gui.framework.mainPage #txt
-st0 f3 startMethod start(gui.framework.businessProcess.BusinessProcessData) #txt
+st0 f3 startMethod start() #txt
 st0 f3 type gui.framework.Data #txt
-st0 f3 requestActionDecl '<gui.framework.businessProcess.BusinessProcessData businessProcessData> param;' #txt
+st0 f3 requestActionDecl '<> param;' #txt
 st0 f3 responseActionDecl 'gui.framework.Data out;
 ' #txt
 st0 f3 responseMappingAction 'out=in;
 ' #txt
+st0 f3 windowConfiguration '* ' #txt
 st0 f3 isAsynch false #txt
 st0 f3 isInnerRd false #txt
 st0 f3 userContext '* ' #txt
