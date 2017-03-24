@@ -2,6 +2,8 @@ package ch.axonivy.fintech.basic.component.showcase.address
 
 import ch.axonivy.fintech.standard.guiframework.BaseMetaDto
 import ch.ivyteam.ivy.environment.Ivy;
+
+
 rule "rule 1"
 when
       $age : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.age",viewValue >= 18)
@@ -13,6 +15,10 @@ then
 	$protector.setRendered(false);
 	
 end
+
+
+
+
 rule "rule 2"
 when
       $age : BaseMetaDto( propertyName == "ContextBasedRules.dg.accountHolder.person.age",viewValue < 18)

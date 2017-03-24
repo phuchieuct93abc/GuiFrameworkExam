@@ -3,4 +3,16 @@
 <debugger>
    <showingRuleKeyOnView>true</showingRuleKeyOnView>
 </debugger>
+ <dataObserver enable="true">
+        <autoResetChangeFlag>true</autoResetChangeFlag>
+        <notifyChange>
+            <listeners>
+               <listener class="ch.axonaviy.guidemo.services.WorkingDateValueChangeListener" 
+                			for="ContextBasedRules.dg.accountHolder.person.workingDay" type="PreRenderView">
+                	
+                </listener>    
+                			
+            </listeners>
+        </notifyChange>
+    </dataObserver>
 </config>

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Mar 23 15:03:32 ICT 2017]
+[>Created: Fri Mar 24 15:34:34 ICT 2017]
 15AF64B0A9893AE0 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainPageProcess Big #zClass
@@ -23,13 +23,11 @@ ms0 @PushWFArc f5 '' #zField
 ms0 @GridStep f6 '' #zField
 ms0 @PushWFArc f7 '' #zField
 ms0 @PushWFArc f2 '' #zField
-ms0 @GridStep f8 '' #zField
 ms0 @RichDialogProcessStart f9 '' #zField
-ms0 @RichDialogProcessEnd f10 '' #zField
 ms0 @PushWFArc f11 '' #zField
+ms0 @GridStep f8 '' #zField
 ms0 @PushWFArc f12 '' #zField
-ms0 @RichDialogMethodStart f14 '' #zField
-ms0 @PushWFArc f15 '' #zField
+ms0 @RichDialogProcessEnd f10 '' #zField
 >Proto ms0 ms0 mainPageProcess #zField
 ms0 f0 guid 15AF64B0AF9D891D #txt
 ms0 f0 type gui.framework.mainPage.mainPageData #txt
@@ -79,7 +77,7 @@ ms0 f6 actionDecl 'gui.framework.mainPage.mainPageData out;
 ' #txt
 ms0 f6 actionTable 'out=in;
 ' #txt
-ms0 f6 actionCode 'import ch.axonaviy.guidemo.services.CommonUtils;
+ms0 f6 actionCode '
 import ch.axonivy.fintech.standard.guiframework.bean.GuiFrameworkContext;
 
 import gui.framework.Dossier;
@@ -94,7 +92,7 @@ in.dossier.accountHolder.person.age = 18;
 in.dossier.accountHolder.person.workAddress = new Address();
 in.dossier.accountHolder.person.homeAddress = new Address();
 
-CommonUtils.onSubmitCallback(out);
+
 ' #txt
 ms0 f6 type gui.framework.mainPage.mainPageData #txt
 ms0 f6 168 42 112 44 0 -8 #rect
@@ -103,23 +101,12 @@ ms0 f7 expr out #txt
 ms0 f7 109 64 168 64 #arcP
 ms0 f2 expr out #txt
 ms0 f2 280 64 339 64 #arcP
-ms0 f8 actionDecl 'gui.framework.mainPage.mainPageData out;
-' #txt
-ms0 f8 actionTable 'out=in;
-' #txt
-ms0 f8 actionCode 'import javax.faces.context.FacesContext;
-' #txt
-ms0 f8 type gui.framework.mainPage.mainPageData #txt
-ms0 f8 136 266 112 44 0 -8 #rect
-ms0 f8 @|StepIcon #fIcon
 ms0 f9 guid 15AF97EB747E7316 #txt
 ms0 f9 type gui.framework.mainPage.mainPageData #txt
 ms0 f9 actionDecl 'gui.framework.mainPage.mainPageData out;
 ' #txt
 ms0 f9 actionTable 'out=in;
 ' #txt
-ms0 f9 actionCode 'import ch.axonaviy.guidemo.services.CommonUtils;
-CommonUtils.onSubmitCallback(out);' #txt
 ms0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -131,37 +118,25 @@ ms0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ms0 f9 67 275 26 26 -19 15 #rect
 ms0 f9 @|RichDialogProcessStartIcon #fIcon
-ms0 f10 type gui.framework.mainPage.mainPageData #txt
-ms0 f10 323 275 26 26 0 12 #rect
-ms0 f10 @|RichDialogProcessEndIcon #fIcon
 ms0 f11 expr out #txt
 ms0 f11 93 288 136 288 #arcP
+ms0 f8 actionDecl 'gui.framework.mainPage.mainPageData out;
+' #txt
+ms0 f8 actionTable 'out=in;
+' #txt
+ms0 f8 actionCode 'import ch.axonaviy.guidemo.services.MyCallbackActionListener;
+import ch.axonivy.fintech.standard.guiframework.base.DialogContextHolder;
+
+import javax.faces.context.FacesContext;
+DialogContextHolder.getInstance().getWorkflow(in).initCallbackActionListener(new MyCallbackActionListener(),null);' #txt
+ms0 f8 type gui.framework.mainPage.mainPageData #txt
+ms0 f8 136 266 112 44 0 -8 #rect
+ms0 f8 @|StepIcon #fIcon
 ms0 f12 expr out #txt
-ms0 f12 248 288 323 288 #arcP
-ms0 f14 guid 15AF97FBA12DD9F0 #txt
-ms0 f14 type gui.framework.mainPage.mainPageData #txt
-ms0 f14 method submit(Boolean) #txt
-ms0 f14 disableUIEvents false #txt
-ms0 f14 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<java.lang.Boolean isValid> param = methodEvent.getInputArguments();
-' #txt
-ms0 f14 inParameterMapAction 'out.isValidated=param.isValid;
-' #txt
-ms0 f14 outParameterDecl '<> result;
-' #txt
-ms0 f14 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>submit()</name>
-        <nameStyle>8,5,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-ms0 f14 83 467 26 26 -23 15 #rect
-ms0 f14 @|RichDialogMethodStartIcon #fIcon
-ms0 f15 expr out #txt
-ms0 f15 101 468 192 310 #arcP
+ms0 f12 248 288 435 288 #arcP
+ms0 f10 type gui.framework.mainPage.mainPageData #txt
+ms0 f10 435 275 26 26 0 12 #rect
+ms0 f10 @|RichDialogProcessEndIcon #fIcon
 >Proto ms0 .type gui.framework.mainPage.mainPageData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -176,5 +151,3 @@ ms0 f9 mainOut f11 tail #connect
 ms0 f11 head f8 mainIn #connect
 ms0 f8 mainOut f12 tail #connect
 ms0 f12 head f10 mainIn #connect
-ms0 f14 mainOut f15 tail #connect
-ms0 f15 head f8 mainIn #connect

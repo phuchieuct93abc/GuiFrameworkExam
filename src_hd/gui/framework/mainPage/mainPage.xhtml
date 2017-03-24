@@ -18,8 +18,10 @@
 					dataModel="#{data.dossier}" dialogData="#{data}" />
 				<ic:gui.framework.component.AccountHolder
 					dataModel="#{data.dossier.accountHolder}"/>
-			<p:commandButton   update="@form" process="@form" partialSubmit="true" ajax="true"  
-            onstart="Fintech.GuiFrameWork.setCurrentProcessingComponentIds('ContextBasedRules.dg');" actionListener="#{logic.submit}"></p:commandButton>
+			<p:commandButton   
+     actionListener="#{logic.submit}"></p:commandButton>
+      <v:validateAllButton rulesPackage="dg" value="Validate" styleClass="validation-button" />
+			Value : #{data.isValidated}
 			</h:form>
 
 		</ui:define>

@@ -7,7 +7,7 @@ package gui.framework.mainPage;
 public class mainPageData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -2080745729891795253L;
+  private static final long serialVersionUID = -3016364120277083449L;
 
   private gui.framework.Dossier dossier;
 
@@ -27,6 +27,26 @@ public class mainPageData extends ch.ivyteam.ivy.scripting.objects.CompositeObje
   public void setDossier(gui.framework.Dossier _dossier)
   {
     dossier = _dossier;
+  }
+
+  private java.lang.Boolean isValidated;
+
+  /**
+   * Gets the field isValidated.
+   * @return the value of the field isValidated; may be null.
+   */
+  public java.lang.Boolean getIsValidated()
+  {
+    return isValidated;
+  }
+
+  /**
+   * Sets the field isValidated.
+   * @param _isValidated the new value of the field isValidated.
+   */
+  public void setIsValidated(java.lang.Boolean _isValidated)
+  {
+    isValidated = _isValidated;
   }
 
 }

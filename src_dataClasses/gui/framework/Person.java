@@ -7,7 +7,7 @@ package gui.framework;
 public class Person extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -7683972031695432002L;
+  private static final long serialVersionUID = 6222203934844296731L;
 
   private java.lang.String lastName;
 
@@ -167,6 +167,46 @@ public class Person extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setMobilePhone(java.lang.String _mobilePhone)
   {
     mobilePhone = _mobilePhone;
+  }
+
+  private java.lang.String workingDay;
+
+  /**
+   * Gets the field workingDay.
+   * @return the value of the field workingDay; may be null.
+   */
+  public java.lang.String getWorkingDay()
+  {
+    return workingDay;
+  }
+
+  /**
+   * Sets the field workingDay.
+   * @param _workingDay the new value of the field workingDay.
+   */
+  public void setWorkingDay(java.lang.String _workingDay)
+  {
+    workingDay = _workingDay;
+  }
+
+  private java.lang.Double salary;
+
+  /**
+   * Gets the field salary.
+   * @return the value of the field salary; may be null.
+   */
+  public java.lang.Double getSalary()
+  {
+    return salary;
+  }
+
+  /**
+   * Sets the field salary.
+   * @param _salary the new value of the field salary.
+   */
+  public void setSalary(java.lang.Double _salary)
+  {
+    salary = _salary;
   }
 
 }
