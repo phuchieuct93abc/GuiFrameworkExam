@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Mar 24 15:34:34 ICT 2017]
+[>Created: Mon Mar 27 08:23:42 ICT 2017]
 15AF64B0A9893AE0 3.18 #module
 >Proto >Proto Collection #zClass
 ms0 mainPageProcess Big #zClass
@@ -26,8 +26,12 @@ ms0 @PushWFArc f2 '' #zField
 ms0 @RichDialogProcessStart f9 '' #zField
 ms0 @PushWFArc f11 '' #zField
 ms0 @GridStep f8 '' #zField
-ms0 @PushWFArc f12 '' #zField
 ms0 @RichDialogProcessEnd f10 '' #zField
+ms0 @RichDialogEnd f13 '' #zField
+ms0 @Alternative f14 '' #zField
+ms0 @PushWFArc f15 '' #zField
+ms0 @PushWFArc f12 '' #zField
+ms0 @PushWFArc f16 '' #zField
 >Proto ms0 ms0 mainPageProcess #zField
 ms0 f0 guid 15AF64B0AF9D891D #txt
 ms0 f0 type gui.framework.mainPage.mainPageData #txt
@@ -124,19 +128,34 @@ ms0 f8 actionDecl 'gui.framework.mainPage.mainPageData out;
 ' #txt
 ms0 f8 actionTable 'out=in;
 ' #txt
-ms0 f8 actionCode 'import ch.axonaviy.guidemo.services.MyCallbackActionListener;
+ms0 f8 actionCode 'import ch.axonaviy.guidemo.services.WorkflowService;
+import ch.axonaviy.guidemo.services.MyCallbackActionListener;
 import ch.axonivy.fintech.standard.guiframework.base.DialogContextHolder;
 
 import javax.faces.context.FacesContext;
-DialogContextHolder.getInstance().getWorkflow(in).initCallbackActionListener(new MyCallbackActionListener(),null);' #txt
+in.isValidated = WorkflowService.isValidationPassed(in.dossier);' #txt
 ms0 f8 type gui.framework.mainPage.mainPageData #txt
 ms0 f8 136 266 112 44 0 -8 #rect
 ms0 f8 @|StepIcon #fIcon
-ms0 f12 expr out #txt
-ms0 f12 248 288 435 288 #arcP
 ms0 f10 type gui.framework.mainPage.mainPageData #txt
 ms0 f10 435 275 26 26 0 12 #rect
 ms0 f10 @|RichDialogProcessEndIcon #fIcon
+ms0 f13 type gui.framework.mainPage.mainPageData #txt
+ms0 f13 guid 15B0D5C244E246F9 #txt
+ms0 f13 435 339 26 26 0 12 #rect
+ms0 f13 @|RichDialogEndIcon #fIcon
+ms0 f14 type gui.framework.mainPage.mainPageData #txt
+ms0 f14 336 272 32 32 0 16 #rect
+ms0 f14 @|AlternativeIcon #fIcon
+ms0 f15 expr out #txt
+ms0 f15 248 288 336 288 #arcP
+ms0 f12 expr in #txt
+ms0 f12 outCond !in.isValidated #txt
+ms0 f12 368 288 435 288 #arcP
+ms0 f16 expr in #txt
+ms0 f16 357 299 435 352 #arcP
+ms0 f16 1 384 352 #addKink
+ms0 f16 0 0.9320363473197659 0 0 #arcLabel
 >Proto ms0 .type gui.framework.mainPage.mainPageData #txt
 >Proto ms0 .processKind HTML_DIALOG #txt
 >Proto ms0 -8 -8 16 16 16 26 #rect
@@ -149,5 +168,9 @@ ms0 f6 mainOut f2 tail #connect
 ms0 f2 head f1 mainIn #connect
 ms0 f9 mainOut f11 tail #connect
 ms0 f11 head f8 mainIn #connect
-ms0 f8 mainOut f12 tail #connect
+ms0 f8 mainOut f15 tail #connect
+ms0 f15 head f14 in #connect
+ms0 f14 out f12 tail #connect
 ms0 f12 head f10 mainIn #connect
+ms0 f14 out f16 tail #connect
+ms0 f16 head f13 mainIn #connect

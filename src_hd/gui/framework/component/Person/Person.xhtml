@@ -7,37 +7,43 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile"
-	   xmlns:gui="http://axonivy.com/gui/components"
-	   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:gui="http://axonivy.com/gui/components"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jc="http://java.sun.com/jsf/composite/fintech-jsfcomponents">
 
 <cc:interface componentType="IvyComponent">
-<cc:attribute name="dataModel"></cc:attribute>
+	<cc:attribute name="dataModel"></cc:attribute>
 </cc:interface>
 
 <cc:implementation>
 	<h2>Person</h2>
 	<p:outputPanel id="personContainer">
-	    <gui:eventListeners dataModel="#{data.person}" dialogData="#{data}" />
-	
+		<gui:eventListeners dataModel="#{data.person}" dialogData="#{data}" />
+
 		<h:panelGrid columns="2">
 
 			<!-- fields needs to be inside a h:form tag (which is normaly added by the outer page) -->
-			<p:outputLabel for="personLastName" value="Last Name" />
+			<p:outputLabel for="personLastName" value="Last Name">
+				<jc:Tooltip tooltipId="personLastNameTooltip" title="Hello"
+					content="Hello" />
+			</p:outputLabel>
 			<p:inputText id="personLastName" value="#{data.person.lastName}"></p:inputText>
 
 			<p:outputLabel for="personFirstName" value="First Name" />
 			<p:inputText id="personFirstName" value="#{data.person.firstName}"></p:inputText>
 
 			<p:outputLabel for="personAge" value="Age" />
-			<p:inputText type="number"  id="personAge" value="#{data.person.age}"></p:inputText>
-			
-						<p:outputLabel for="personWorkingDay" value="WorkingDay" />
-			<p:inputText type="number"  id="personWorkingDay" value="#{data.person.workingDay}"></p:inputText>
-			
-			
-						<p:outputLabel for="personSalary" value="Age" />
-			<p:inputText type="number"  id="personSalary" value="#{data.person.salary}"></p:inputText>
-			
+			<p:inputText type="number" id="personAge" value="#{data.person.age}"></p:inputText>
+
+			<p:outputLabel for="personWorkingDay" value="WorkingDay" />
+			<p:inputText type="number" id="personWorkingDay"
+				value="#{data.person.workingDay}"></p:inputText>
+
+
+			<p:outputLabel for="personSalary" value="Age" />
+			<p:inputText type="number" id="personSalary"
+				value="#{data.person.salary}"></p:inputText>
+
 
 			<p:outputLabel for="personProtector" value="Protector" />
 			<p:inputText id="personProtector" value="#{data.person.protector}"></p:inputText>
@@ -47,20 +53,34 @@
 			<p:inputText id="personLandlinePhone"
 				value="#{data.person.landlinePhone}"></p:inputText>
 
-			<p:outputLabel  value="Mobile Phone" />
+			<p:outputLabel value="Mobile Phone" />
 			<p:inputText id="personMobilePhone"
-				value="#{data.person.mobilePhone}"  
-				></p:inputText> 
- 
-					 <p:outputLabel value="Work address" />
-				
-		
-					<ic:gui.framework.component.Address dataModel="#{data.person.workAddress}"></ic:gui.framework.component.Address>
-				
+				value="#{data.person.mobilePhone}"></p:inputText>
+			
+			<!-- Date -->
+			<p:outputLabel value="Birth date" for="personBirthDate" />
+			<p:calendar  id="personBirthDate"
+				value="#{data.person.birthDate}"></p:calendar >
+
+			<p:outputLabel value="Entry Date" for="personEntryDate"/>
+			<p:calendar  id="personEntryDate"
+				value="#{data.person.entryDate}"></p:calendar>
+
+			<p:outputLabel value="Leace date" for="personLeaveDate" />
+			<p:calendar id="personLeaveDate"
+				value="#{data.person.leaveDate}"></p:calendar>
+
+			<p:outputLabel value="Work address" />
+
+
+			<ic:gui.framework.component.Address
+				dataModel="#{data.person.workAddress}"></ic:gui.framework.component.Address>
+
 			<p:outputLabel value="Home address" />
 
-			<ic:gui.framework.component.Address dataModel="#{data.person.homeAddress}"></ic:gui.framework.component.Address>
- 		</h:panelGrid>
+			<ic:gui.framework.component.Address
+				dataModel="#{data.person.homeAddress}"></ic:gui.framework.component.Address>
+		</h:panelGrid>
 
 	</p:outputPanel>
 </cc:implementation>

@@ -7,20 +7,26 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile"
 	xmlns:gui="http://axonivy.com/gui/components"
-	  xmlns:v="http://java.sun.com/jsf/composite/guiframework-components">
+	xmlns:v="http://java.sun.com/jsf/composite/guiframework-components">
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">mainPage</ui:define>
 		<ui:define name="content">
 			<h:form id="form">
-			
-				<gui:eventListeners rulesPackage="dg"
-					dataModel="#{data.dossier}" dialogData="#{data}" />
+
+				<gui:eventListeners rulesPackage="dg" dataModel="#{data.dossier}"
+					dialogData="#{data}" />
 				<ic:gui.framework.component.AccountHolder
-					dataModel="#{data.dossier.accountHolder}"/>
-			<p:commandButton   
-     actionListener="#{logic.submit}"></p:commandButton>
-      <v:validateAllButton rulesPackage="dg" value="Validate" styleClass="validation-button" />
+					dataModel="#{data.dossier.accountHolder}" />
+				<p:commandButton actionListener="#{logic.submit}"
+					value="Validate all">
+					
+					</p:commandButton>
+					
+					
+				<p:commandButton rulesPackage="dg" value="Validate"  update="@form" process="@form" partialSubmit="true" ajax="true"  
+            onstart="Fintech.GuiFrameWork.setCurrentProcessingComponentIds('ContextBasedRules.dg');"
+					styleClass="validation-button" />
 			Value : #{data.isValidated}
 			</h:form>
 
