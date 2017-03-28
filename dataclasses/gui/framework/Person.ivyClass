@@ -16,3 +16,13 @@ landlinePhone String #field
 landlinePhone PERSISTENT #fieldModifier
 mobilePhone String #field
 mobilePhone PERSISTENT #fieldModifier
+workingDay String #field
+workingDay PERSISTENT #fieldModifier
+salary Double #field
+salary PERSISTENT #fieldModifier
+birthDate java.util.Date #field
+birthDate PERSISTENT #fieldModifier
+leaveDate java.util.Date #field
+leaveDate PERSISTENT #fieldModifier
+entryDate java.util.Date #field
+entryDate PERSISTENT #fieldModifier

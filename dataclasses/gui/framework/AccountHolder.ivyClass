@@ -1,0 +1,4 @@
+AccountHolder #class
+gui.framework #namespace
+person gui.framework.Person #field
+person PERSISTENT #fieldModifier

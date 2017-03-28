@@ -1,0 +1,6 @@
+Phone #class
+gui.framework #namespace
+landlinePhone String #field
+landlinePhone PERSISTENT #fieldModifier
+mobilePhone String #field
+mobilePhone PERSISTENT #fieldModifier

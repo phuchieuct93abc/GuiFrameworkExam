@@ -1,4 +1,4 @@
-BusinessProcessData #class
-gui.framework.businessProcess #namespace
+Dossier #class
+gui.framework #namespace
 accountHolder gui.framework.AccountHolder #field
 accountHolder PERSISTENT #fieldModifier
