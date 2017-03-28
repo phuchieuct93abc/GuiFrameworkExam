@@ -11,5 +11,15 @@
 	<classpathentry kind="con" path="WEBAPP_CONTAINER"/>
 	<classpathentry kind="con" path="ULC_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="classes"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	 <classpathentry kind="lib" path="lib/mockito-core.jar"/>
+	 <classpathentry kind="lib" path="lib/objenesis.jar"/>
+	 <classpathentry kind="lib" path="lib/powermock-api-mockito.jar"/>
+	 <classpathentry kind="lib" path="lib/powermock-api-support.jar"/>
+	 <classpathentry kind="lib" path="lib/powermock-core.jar"/>
+	 <classpathentry kind="lib" path="lib/powermock-module-junit4-common.jar"/>
+	 <classpathentry kind="lib" path="lib/powermock-module-junit4.jar"/>
+	 <classpathentry kind="lib" path="lib/powermock-reflect.jar"/>
 </classpath>

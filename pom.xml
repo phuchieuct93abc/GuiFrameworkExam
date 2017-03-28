@@ -2,6 +2,11 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>ch.fintech</groupId>
+    <artifactId>ivy-test-project</artifactId>
+    <version>1.0.0.0-SNAPSHOT</version>
+  </parent>
   <groupId>gui.framework</groupId>
   <artifactId>gui-framework</artifactId>
   <version>1.0.0-SNAPSHOT</version>
@@ -9,8 +14,14 @@
   <dependencies>
     <dependency>
       <groupId>ch.axonivy.fintech</groupId>
-      <artifactId>standard</artifactId>
-      <version>[0.00.60.00-SNAPSHOT,)</version>
+      <artifactId>integration_test</artifactId>
+      <version>[0.00.01.00-SNAPSHOT,)</version>
+      <type>iar</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.axonivy.fintech</groupId>
+      <artifactId>basic_component</artifactId>
+      <version>[0.00.64.00-SNAPSHOT,)</version>
       <type>iar</type>
     </dependency>
   </dependencies>
